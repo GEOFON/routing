@@ -1,0 +1,2 @@
+$ Daily metadata update for routing service
+52 03 * * * /var/www/eidaws/routing/1/data/updateAll.py
