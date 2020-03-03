@@ -11,7 +11,7 @@ COPY docker/cronjob /etc/cron.d/routing
 
 RUN a2enmod wsgi && service apache2 restart && a2enconf routing && service apache2 reload
 RUN cd /var/www/eidaws/routing/1 && cp routing.cfg.sample routing.cfg && chown -R www-data.www-data .
-RUN cd data && chmod -R g+w . && cp routing.xml.sample routing.xml && ./updateAll.py -l INFO
+RUN cd /var/www/eidaws/routing/1/data && chmod -R g+w . && cp routing.xml.sample routing.xml && ./updateAll.py -l INFO
 
 ENV APACHE_RUN_USER www-data
 ENV APACHE_RUN_GROUP www-data
